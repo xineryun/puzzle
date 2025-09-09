@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MergeUp! - Digital Puzzle Master</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FFD166',
+            secondary: '#06D6A0',
+            accent: '#118AB2',
+            dark: '#073B4C',
+            light: '#F7F9FC'
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .duck-hover {
+        transition: transform 0.3s ease;
+      }
+      .duck-hover:hover {
+        transform: translateY(-5px) rotate(2deg);
+      }
+      .btn-bounce {
+        transition: transform 0.2s ease;
+      }
+      .btn-bounce:hover {
+        transform: scale(1.05);
+      }
+      .btn-bounce:active {
+        transform: scale(0.98);
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter bg-light text-dark">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="flex items-center gap-2">
+        <i class="fa fa-th-large text-primary text-2xl"></i>
+        <span class="font-bold text-xl">MergeUp!</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="hover:text-accent transition-colors">About</a>
+        <a href="#how-to-play" class="hover:text-accent transition-colors">How to Play</a>
+        <a href="#download" class="hover:text-accent transition-colors">Download</a>
+        <a href="#privacy" class="hover:text-accent transition-colors">Privacy</a>
+      </div>
+      <button class="md:hidden text-xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-28 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-primary/10 to-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 space-y-6">
+          <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight text-shadow">
+            MergeUp! <br>
+            <span class="text-accent">Digital Puzzle Master</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 max-w-lg">
+            MergeUp! is a captivating number-merging puzzle game inspired by 2048. 
+            Test your strategy, foresight, and quick thinking across three escalating difficulty levels.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="https://play.google.com/store/apps/details?id=com.mergeup.puzzlechallenge" target="_blank" class="btn-bounce bg-accent hover:bg-accent/90 text-white font-medium px-8 py-3 rounded-full flex items-center gap-2 shadow-lg">
+              <i class="fa fa-download"></i>
+              <span>Download on Google Play</span>
+            </a>
+            <a href="#how-to-play" class="btn-bounce bg-white hover:bg-gray-100 text-dark font-medium px-8 py-3 rounded-full flex items-center gap-2 shadow-md border border-gray-200">
+              <i class="fa fa-gamepad"></i>
+              <span>How to Play</span>
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-primary/30 rounded-3xl rotate-3"></div>
+            <img src="https://picsum.photos/seed/mergeup2048/600/400" alt="MergeUp puzzle board with number tiles" class="relative z-10 rounded-2xl shadow-2xl duck-hover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="about" class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">Why Play MergeUp?</h2>
+        <p class="text-gray-600 text-lg">A fresh take on the beloved 2048 mechanics, designed to challenge and entertain.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duck-hover">
+          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+            <i class="fa fa-calculator text-2xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Strategic Depth</h3>
+          <p class="text-gray-600">Plan ahead and combine tiles wisely to achieve ambitious targets.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duck-hover">
+          <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6">
+            <i class="fa fa-bolt text-2xl text-secondary"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Multiple Levels</h3>
+          <p class="text-gray-600">From beginner 4x4 boards to expert 6x6 grids, there’s a challenge for everyone.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duck-hover">
+          <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6">
+            <i class="fa fa-undo text-2xl text-accent"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Handy Tools</h3>
+          <p class="text-gray-600">Undo steps, restart at will, and play with music on or off for the best experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Play Section -->
+  <section id="how-to-play" class="py-16 md:py-24 bg-gradient-to-b from-white to-primary/5">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">How to Play</h2>
+        <p class="text-gray-600 text-lg">Simple rules, deep strategy</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div class="md:flex">
+            <div class="md:w-2/5">
+              <img src="https://picsum.photos/seed/mergeboard/500/800" alt="MergeUp number merging puzzle board" class="h-full w-full object-cover">
+            </div>
+            <div class="md:w-3/5 p-8 md:p-10">
+              <ol class="space-y-6">
+                <li class="flex gap-4">
+                  <div class="min-w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">1</div>
+                  <p>Swipe up, down, left, or right to move number tiles. Identical tiles merge into one (2+2=4).</p>
+                </li>
+                <li class="flex gap-4">
+                  <div class="min-w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">2</div>
+                  <p>Each move spawns a new tile (2 or 4). Plan carefully to avoid running out of space.</p>
+                </li>
+                <li class="flex gap-4">
+                  <div class="min-w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">3</div>
+                  <p>Special rules: On larger boards (5x5, 6x6), chain merges can happen across rows/columns.</p>
+                </li>
+                <li class="flex gap-4">
+                  <div class="min-w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">4</div>
+                  <p>Levels: Beginner (4x4 → 2048), Intermediate (5x5 → 4096), Expert (6x6 → 8192).</p>
+                </li>
+                <li class="flex gap-4">
+                  <div class="min-w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">5</div>
+                  <p>Win by reaching the target number. Lose if no moves or merges remain.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">Game Preview</h2>
+        <p class="text-gray-600 text-lg">See MergeUp in action</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-lg duck-hover">
+          <img src="https://picsum.photos/seed/mergeup1/400/300" alt="MergeUp start screen" class="w-full h-64 object-cover">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg duck-hover">
+          <img src="https://picsum.photos/seed/mergeup2/400/300" alt="MergeUp gameplay in progress" class="w-full h-64 object-cover">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg duck-hover">
+          <img src="https://picsum.photos/seed/mergeup3/400/300" alt="MergeUp target reached" class="w-full h-64 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="py-16 md:py-24 bg-accent/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-6">Get MergeUp Today</h2>
+        <p class="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
+          Download MergeUp now and challenge yourself to reach 2048, 4096, or even 8192. 
+          Swipe, merge, and master the puzzle!
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.mergeup.puzzlechallenge" target="_blank" class="btn-bounce inline-block bg-accent hover:bg-accent/90 text-white font-bold px-10 py-4 rounded-full text-lg shadow-xl flex items-center gap-3 mx-auto">
+          <i class="fa fa-android text-2xl"></i>
+          <span>Download on Google Play</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-2">
+          <i class="fa fa-th-large text-primary text-2xl"></i>
+          <span class="font-bold text-xl">MergeUp</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="#about" class="hover:text-primary transition-colors">About</a>
+          <a href="#how-to-play" class="hover:text-primary transition-colors">How to Play</a>
+          <a href="https://play.google.com/store/apps/details?id=com.mergeup.puzzlechallenge" target="_blank" class="hover:text-primary transition-colors">Download</a>
+          <a id="privacy" href="https://sites.google.com/view/fiveducks-puzzle" target="_blank" class="hover:text-primary transition-colors">Privacy Policy</a>
+        </div>
+        <div class="text-gray-400 text-sm">
+          &copy; 2025 MergeUp. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href') !== "#") {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('py-2', 'shadow');
+        nav.classList.remove('py-3');
+      } else {
+        nav.classList.add('py-3');
+        nav.classList.remove('py-2', 'shadow');
+      }
+    });
+  </script>
+</body>
+</html>
